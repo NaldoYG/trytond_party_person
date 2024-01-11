@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<form col="8">
+    <label name="citizenship"/>
+    <field name="citizenship"/>
+    <label name="country"/>
+    <field name="country"/>
+    <label name="subdivision"/>
+    <field name="subdivision"/>
+    <label name="city"/>
+    <field name="city"/>
+    <newline/>
+    <label name="street"/>
+    <field name="street" colspan="7"/>
+</form>
