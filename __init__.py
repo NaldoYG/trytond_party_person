@@ -11,6 +11,7 @@ def register():
     Pool.register(
         party_person.Party,
         party_person.Address,
+        party_person.Configuration,
         module='party_person', type_='model')
     Pool.register(
         module='party_person', type_='wizard')

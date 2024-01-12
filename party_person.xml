@@ -10,5 +10,11 @@
          <field name="type">form</field>
          <field name="name">party_address_form_simple</field>
        </record>
+       <record model="ir.ui.view" id="person_identifier_list_sequence">
+         <field name="model">party.identifier</field>
+         <field name="type">tree</field>
+         <field name="priority" eval="20"/>
+         <field name="name">person_identifier_list_sequence</field>
+     </record>
     </data>
  </tryton>

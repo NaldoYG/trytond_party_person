@@ -1,0 +1,5 @@
+<tree sequence="sequence" editable="1">
+    <field name="party" expand="1"/>
+    <field name="type" expand="1"/>
+    <field name="code" expand="2"/>
+</tree>

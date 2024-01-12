@@ -19,10 +19,12 @@
                     <newline/>
                     <label name="dob"/>
                     <field name="dob"/>
+                    <label name="age"/>
+                    <field name="age"/>
                 </group>
                 <group colspan="2" id="person_identifiers">
                     <field name="identifiers" colspan="4" pre_validate="1"
-                        view_ids="party.identifier_list_sequence"/>
+                        view_ids="party_person.person_identifier_list_sequence"/>
                 </group>
                 <newline />
                 <field name="addresses" mode="form" colspan="4" 
