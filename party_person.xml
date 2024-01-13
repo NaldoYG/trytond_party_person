@@ -1,20 +1,41 @@
 <tryton>
     <data>
-       <record model="ir.ui.view" id="party_view_form">
-          <field name="model">party.party</field>
-          <field name="inherit" ref="party.party_view_form"/>
-          <field name="name">party_form</field>
-       </record>
-       <record model="ir.ui.view" id="party_address_view_form_simple">
+       <!-- Add new Icons -->
+       <record model="ir.ui.icon" id="people_icon">
+          <field name="name">party-people</field>
+          <field name="path">icons/people.svg</field>
+      </record>
+      <record model="ir.ui.view" id="party_view_form">
+         <field name="model">party.party</field>
+         <field name="inherit" ref="party.party_view_form"/>
+         <field name="name">party_form</field>
+      </record>
+      <record model="ir.ui.view" id="party_address_view_form_simple">
          <field name="model">party.address</field>
          <field name="type">form</field>
          <field name="name">party_address_form_simple</field>
-       </record>
-       <record model="ir.ui.view" id="person_identifier_list_sequence">
+      </record>
+      <record model="ir.ui.view" id="person_identifier_list_sequence">
          <field name="model">party.identifier</field>
          <field name="type">tree</field>
          <field name="priority" eval="20"/>
          <field name="name">person_identifier_list_sequence</field>
-     </record>
+      </record>
+      <!-- Indexar Person en menu terceros -->
+      <record model="ir.action.act_window" id="act_person_form">
+         <field name="name">People</field>
+         <field name="res_model">party.party</field>
+         <field name="domain" eval="[('is_person', '=', True)]" pyson="1"/>
+      </record>
+      
+      <menuitem parent="party.menu_party_form" sequence="1" 
+            action="act_person_form" id="menu_person" icon="party-people"/>
+      
+      <record model="ir.ui.view" id="party_view_tree">
+         <field name="model">party.party</field>
+         <field name="inherit" ref="party.party_view_tree"/>
+         <field name="name">party_tree</field>
+      </record>
+      
     </data>
  </tryton>

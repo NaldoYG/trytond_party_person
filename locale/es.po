@@ -2,3 +2,82 @@ msgctxt "selection:party.configuration,identifier_types:"
 msgid "Passport"
 msgstr "Pasaporte"
 
+msgctxt "field:party.party,lastname:"
+msgid "Lastname"
+msgstr "Apellido"
+
+msgctxt "field:party.party,is_person:"
+msgid "Person"
+msgstr "Persona"
+
+msgctxt "field:party.party,dob:"
+msgid "Date of Birth"
+msgstr "Nacimiento"
+
+msgctxt "field:party.party,age:"
+msgid "Age"
+msgstr "Edad"
+
+msgctxt "field:party.party,gender:"
+msgid "Gender"
+msgstr "Género"
+
+msgctxt "selection:party.party,gender:"
+msgid "Male"
+msgstr "Masculino"
+
+msgctxt "selection:party.party,gender:"
+msgid "Female"
+msgstr "Femenino"
+
+msgctxt "selection:party.party,gender:"
+msgid "Other"
+msgstr "Otro"
+
+msgctxt "field:party.party,marital_status:"
+msgid "Marital Status"
+msgstr "Estado Civil"
+
+msgctxt "selection:party.party,marital_status:"
+msgid "Single"
+msgstr "Soltero/Soltera"
+
+msgctxt "selection:party.party,marital_status:"
+msgid "Married"
+msgstr "Casado/Casada"
+
+msgctxt "selection:party.party,marital_status:"
+msgid "Concubinage"
+msgstr "Concubino/Concubina"
+
+msgctxt "selection:party.party,marital_status:"
+msgid "Widowed"
+msgstr "Viudo/Viuda"
+
+msgctxt "selection:party.party,marital_status:"
+msgid "Divorced"
+msgstr "Divorciado/Divorciada"
+
+msgctxt "selection:party.party,marital_status:"
+msgid "Separated"
+msgstr "Comprometido/Comprometida"
+
+msgctxt "view:party.party:"
+msgid "People"
+msgstr "Personas"
+
+msgctxt "view:party.party:"
+msgid "Demographics"
+msgstr "Demografía"
+
+msgctxt "view:party.party:"
+msgid "Basic Info"
+msgstr "Información Básica"
+
+msgctxt "field:party.address,citizenship:"
+msgid "Citizenship"
+msgstr "Nacionalidad"
+
+msgctxt "model:ir.ui.menu,name:menu_person"
+msgid "People"
+msgstr "Personas"

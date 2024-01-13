@@ -24,7 +24,7 @@ class Party(metaclass=PoolMeta):
     dob = fields.Date(
         'Date of Birth',
         help="Fill the day of birth")
-    age = fields.Function(fields.Char('Age'),'on_change_with_dob')
+    age = fields.Function(fields.Char('Age'),'on_change_with_age')
     gender = fields.Selection([
         (None, ''),
         ('m', 'Male'),
@@ -46,7 +46,7 @@ class Party(metaclass=PoolMeta):
         sort=False)
 
     @fields.depends('dob')
-    def on_change_with_age(self):
+    def on_change_with_age(self,name=None):
         if self.dob:
             start = dt.strptime(str(self.dob), '%Y-%m-%d')
             end = dt.strptime(str(dt.today().date()), '%Y-%m-%d')
