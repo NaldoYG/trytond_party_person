@@ -1,7 +1,7 @@
 <tryton>
     <data>
        <!-- Add new Icons -->
-       <record model="ir.ui.icon" id="people_icon">
+      <record model="ir.ui.icon" id="people_icon">
           <field name="name">party-people</field>
           <field name="path">icons/people.svg</field>
       </record>

@@ -4,10 +4,6 @@ from trytond.pyson import Not,Bool,Eval,If
 
 from datetime import datetime as dt
 from dateutil.relativedelta import relativedelta
-from ..party.party import IDENTIFIER_TYPES
-
-# IDENTIFIER_TYPES.append(('passport','Passport'))
-
 
 class Party(metaclass=PoolMeta):
     __name__ = 'party.party'
@@ -16,8 +12,7 @@ class Party(metaclass=PoolMeta):
         'Lastname',strip=True,
         states={
             'invisible': Not(Bool(Eval('is_person')))
-        },
-        help="Family or last names")
+        },help="Family or last names")
     is_person = fields.Boolean(
         'Person',
         help="Choose if is a person")
@@ -45,14 +40,31 @@ class Party(metaclass=PoolMeta):
         ], 'Marital Status',
         sort=False)
 
+    def get_rec_name(self,name=None):
+
+        if self.is_person:
+            return f'{self.lastname}, {self.name}'
+        else:
+            return f'{self.name}'
+        
+    @classmethod
+    def search_lastname(cls, lastname, clause):
+        res=[]
+        value=clause[2]
+        res.append(('lastname',clause[1],value))
+        return res
+    
+
     @fields.depends('dob')
     def on_change_with_age(self,name=None):
         if self.dob:
             start = dt.strptime(str(self.dob), '%Y-%m-%d')
             end = dt.strptime(str(dt.today().date()), '%Y-%m-%d')
             age = relativedelta(end,start)
-            
             return f'{age.years} Años, {age.months} Meses y {age.days} Dias'
+        
+        else:
+            return ''
 
 
 class Address(metaclass=PoolMeta):
