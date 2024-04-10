@@ -1,4 +1,4 @@
-from trytond.model import fields
+from trytond.model import fields, Unique
 from trytond.pool import PoolMeta,Pool
 from trytond.pyson import Not,Bool,Eval,If
 
@@ -66,6 +66,13 @@ class Party(metaclass=PoolMeta):
         else:
             return ''
 
+    @classmethod
+    def view_attributes(cls):
+        return super().view_attributes() + [
+            ('//page[@id ="person_page"]','states',{
+                'invisible': Not(Bool(Eval('is_person')))
+            }),
+        ]
 
 class Address(metaclass=PoolMeta):
     __name__ = 'party.address'

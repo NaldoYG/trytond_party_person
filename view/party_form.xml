@@ -3,12 +3,16 @@
         <label name="lastname"/>
         <field name="lastname" xexpand="1"/>
     </xpath>
+
+    <xpath expr="/form/group" position="after">
+        <group colspan="4" id="person_types">
+            <label name="is_person"/>
+            <field name="is_person"/>
+        </group>
+    </xpath>
+
     <xpath expr="/form/notebook/page[@id=&quot;general&quot;]" position="before">
         <page string="People" id="person_page">
-            <group colspan="4" id="person_types">
-                <label name="is_person"/>
-                <field name="is_person"/>
-            </group>
             <group colspan="4" id="person_atributes_group" string="Demographics">
                 <group col="8" colspan="2" id="Person_basic_info" string="Basic Info" yalign="0.0">
                     <label name="gender"/>
@@ -37,4 +41,4 @@
             </group>
         </page>
     </xpath>
- </data>
+</data>
