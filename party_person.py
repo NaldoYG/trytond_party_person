@@ -26,9 +26,7 @@ class Party(metaclass=PoolMeta):
         ('f', 'Female'),
         ('other', 'Other')
         ],
-        'Gender',
-        states={
-            'required': Bool(Eval('is_person'))})
+        'Gender')
     marital_status = fields.Selection([
         (None, ''),
         ('s', 'Single'),
@@ -39,6 +37,8 @@ class Party(metaclass=PoolMeta):
         ('x', 'Separated'),
         ], 'Marital Status',
         sort=False)
+    
+    photo = fields.Binary('Photo')
 
     def get_rec_name(self,name=None):
 

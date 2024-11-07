@@ -3,32 +3,35 @@
         <label name="lastname"/>
         <field name="lastname" xexpand="1"/>
     </xpath>
-
-    <xpath expr="/form/group" position="after">
-        <group colspan="4" id="person_types">
-            <label name="is_person"/>
-            <field name="is_person"/>
-        </group>
+    
+    <xpath expr="/form/group/group[@id='checkboxes']" position="inside">
+        <label name="is_person"/>
+        <field name="is_person"/>
     </xpath>
 
     <xpath expr="/form/notebook/page[@id=&quot;general&quot;]" position="before">
         <page string="People" id="person_page">
             <group colspan="4" id="person_atributes_group" string="Demographics">
-                <group col="8" colspan="2" id="Person_basic_info" string="Basic Info" yalign="0.0">
-                    <label name="gender"/>
-                    <field name="gender" colspan="2"/>
-                    <newline/>
-                    <label name="marital_status"/>
-                    <field name="marital_status" colspan="1"/>
-                    <newline/>
-                    <label name="dob"/>
-                    <field name="dob"/>
-                    <label name="age"/>
-                    <field name="age"/>
-                </group>
                 <group colspan="2" id="person_identifiers">
                     <field name="identifiers" colspan="4" pre_validate="1"
                         view_ids="party_person.person_identifier_list_sequence"/>
+                </group>
+                <group col="8" colspan="2" id="Person_basic_info" string="Basic Info" yalign="0.0">
+                    <group col='2' colspan='6' id='attributes' yalign='0.0'>
+                        <label name="gender"/>
+                        <field name="gender"/>
+                        <newline/>
+                        <label name="marital_status"/>
+                        <field name="marital_status" colspan="1"/>
+                        <newline/>
+                        <label name="dob"/>
+                        <field name="dob"/>
+                        <label name="age"/>
+                        <field name="age"/>
+                    </group>
+                    <group colspan='2' id='photo' >
+                        <field name="photo" height="200" widget="image"/>
+                    </group>
                 </group>
                 <newline />
                 <field name="addresses" mode="form" colspan="4" 
